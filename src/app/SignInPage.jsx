@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 // Navy blue - #1976d2
 
 // eslint-disable-next-line react/prop-types
-export default function SignIn({ isSignIn }) {
+export default function SignInPage({ isSignIn }) {
   const signInFields = [
     {
       name: "email",
