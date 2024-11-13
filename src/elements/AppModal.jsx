@@ -18,14 +18,14 @@ export default function AppModal({ isOpen, onClose, children, title }) {
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
 
-        <ModalFooter>
+        {/* <ModalFooter>
           <Button type="submit" colorScheme="blue">
             Save
           </Button>
           <Button variant="ghost" mr={3} onClick={onClose}>
             Cancel
           </Button>
-        </ModalFooter>
+        </ModalFooter> */}
       </ModalContent>
     </Modal>
   );

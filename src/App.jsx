@@ -4,17 +4,22 @@ import SignInPage from "./app/SignInPage";
 import Header from "./components/Header";
 import { useState } from "react";
 import TaskPage from "./app/TaskPage";
+import RequireAuth from "./components/RequireAuth.js";
 
 function App() {
   const [isSignIn, setSignIn] = useState(true);
   const routes = useRoutes([
     {
       path: "/",
-      element: <SignInPage isSignIn={isSignIn} />,
+      element: <SignInPage isSignIn={isSignIn} setSignIn={setSignIn} />,
     },
     {
       path: "/task",
-      element: <TaskPage isSignIn={isSignIn} />,
+      element: (
+        <RequireAuth>
+          <TaskPage isSignIn={isSignIn} />
+        </RequireAuth>
+      ),
     },
   ]);
 
