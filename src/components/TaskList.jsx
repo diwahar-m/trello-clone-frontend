@@ -1,9 +1,9 @@
 import TaskItem from "./TaskItem";
 
 export default function TaskList() {
-  const taskItemTitle = ["TODO", "IN PROGRESS", "DONE"];
+  const taskItemTitle = ["todo", "in_progress", "done"];
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-rows-3 lg:grid-cols-3 gap-4">
       {taskItemTitle?.map((taskItem) => (
         <TaskItem key={taskItem} taskItem={taskItem} />
       ))}

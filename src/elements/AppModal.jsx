@@ -9,7 +9,13 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-export default function AppModal({ isOpen, onClose, children, title }) {
+export default function AppModal({
+  isOpen,
+  onClose,
+  children,
+  title,
+  edit = false,
+}) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -18,14 +24,13 @@ export default function AppModal({ isOpen, onClose, children, title }) {
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
 
-        {/* <ModalFooter>
-          <Button type="submit" colorScheme="blue">
-            Save
-          </Button>
-          <Button variant="ghost" mr={3} onClick={onClose}>
-            Cancel
-          </Button>
-        </ModalFooter> */}
+        {edit && (
+          <ModalFooter>
+            <Button variant="ghost" mr={3} onClick={() => onClose()}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        )}
       </ModalContent>
     </Modal>
   );
