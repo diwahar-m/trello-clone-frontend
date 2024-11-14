@@ -5,10 +5,10 @@ import { useEffect } from "react";
 import { getToken, postUser, setToken } from "../common/common.js";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { GoogleLogin } from "@react-oauth/google";
+// import { GoogleLogin } from "@react-oauth/google";
 
-const clientId =
-  "800335510946-vji4glue17vlm7fgu4vteditem4g6tku.apps.googleusercontent.com";
+// const clientId =
+// "800335510946-vji4glue17vlm7fgu4vteditem4g6tku.apps.googleusercontent.com";
 
 // eslint-disable-next-line react/prop-types
 export default function SignInPage({ isSignIn, setSignIn }) {
