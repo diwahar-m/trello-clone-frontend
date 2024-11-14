@@ -1,6 +1,6 @@
 import { DndContext } from "@dnd-kit/core";
-import { Droppable } from "../drag/Droppable";
-import TaskItem from "./TaskItem";
+import { Droppable } from "../drag/Droppable.jsx";
+import TaskItem from "./TaskItem.jsx";
 import { useState } from "react";
 
 export default function TaskList() {

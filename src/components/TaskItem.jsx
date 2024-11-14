@@ -1,11 +1,11 @@
 import { Button, Text, useDisclosure } from "@chakra-ui/react";
 import { deleteTask, formatDate, updateTask } from "../common/common";
 import { useContext, useState } from "react";
-import { TaskContext } from "../app/TaskPage";
-import AppModal from "../elements/AppModal";
+import { TaskContext } from "../app/TaskPage.jsx";
+import AppModal from "../elements/AppModal.jsx";
 import InputField from "../elements/inputField";
 import { useForm } from "react-hook-form";
-import { Draggable } from "../drag/Draggable";
+import { Draggable } from "../drag/Draggable.jsx";
 
 // eslint-disable-next-line react/prop-types
 export default function TaskItem({ taskItem }) {
