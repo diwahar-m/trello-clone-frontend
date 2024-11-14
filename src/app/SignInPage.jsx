@@ -5,10 +5,15 @@ import { useEffect } from "react";
 import { getToken, postUser, setToken } from "../common/common.js";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+
+const clientId =
+  "800335510946-vji4glue17vlm7fgu4vteditem4g6tku.apps.googleusercontent.com";
 
 // eslint-disable-next-line react/prop-types
 export default function SignInPage({ isSignIn, setSignIn }) {
   const navigate = useNavigate();
+
   useEffect(() => {
     if (getToken()) {
       navigate("/task");
@@ -97,12 +102,6 @@ export default function SignInPage({ isSignIn, setSignIn }) {
     }
   }
 
-  function onSignIn(googleUser) {
-    const profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId());
-    console.log("Name: " + profile.getName());
-  }
-
   return (
     <div className="w-full h-full">
       <Toaster />
@@ -111,7 +110,7 @@ export default function SignInPage({ isSignIn, setSignIn }) {
           <p className="text-[34px] text-[#1976d2] font-semibold self-start ">
             {isSignIn ? "Login" : "Signup"}
           </p>
-          <div className="border-[3px]  flex flex-col gap-[8px] rounded-lg p-[20px] border-[#1976d2] w-[100%]">
+          <div className="border-[3px]  flex flex-col items-center gap-[8px] rounded-lg p-[20px] border-[#1976d2] w-[100%]">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col gap-[12px]">
                 {fields?.map((field, index) => {
@@ -157,7 +156,16 @@ export default function SignInPage({ isSignIn, setSignIn }) {
                 {isSignIn ? "Signup" : "Login"}
               </Text>
             </div>
-            {/* <div class="g-signin2" data-onsuccess="onSignIn"></div> */}
+            {/* <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                console.log(credentialResponse);
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+              useOneTap
+            /> */}
+            ;
           </div>
         </div>
       </div>

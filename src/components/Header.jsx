@@ -13,7 +13,7 @@ export default function Header({ setSignIn }) {
     if (location.pathname?.includes("task")) {
       setTaskPage(true);
     }
-  });
+  }, []);
   console.log(location.pathname);
   return (
     <div className="bg-[#1976d2] w-[100%] h-[65px] py-[10px] px-[20px] ">

@@ -5,6 +5,7 @@ import { TaskContext } from "../app/TaskPage";
 import AppModal from "../elements/AppModal";
 import InputField from "../elements/inputField";
 import { useForm } from "react-hook-form";
+import { Draggable } from "../drag/Draggable";
 
 // eslint-disable-next-line react/prop-types
 export default function TaskItem({ taskItem }) {
@@ -84,46 +85,48 @@ export default function TaskItem({ taskItem }) {
       </Text>
       <div className="min-h-[400px] flex flex-col gap-[10px]  overflow-y-auto py-[4px]">
         {filteredList?.map((each, ind) => (
-          <div key={ind} className="bg-[#9DE8F2] flex flex-col gap-3 p-4">
-            <Text className="font-[600] text-left">{each?.title}</Text>
-            <Text className="font-400 text-left">
-              {each?.description || ""}
-            </Text>
-            <Text className="font-400 text-left">{`Created at: ${formatDate(
-              each?.date
-            )}`}</Text>
-            <div className="ml-auto flex flex-row w-[80%] gap-[4px] justify-end">
-              <Button
-                color={"white"}
-                backgroundColor={"red"}
-                className="rounded"
-                onClick={() => deleteHandler(each?._id)}
-              >
-                Delete
-              </Button>
-              <Button
-                color={"white"}
-                backgroundColor={"blue"}
-                className="rounded"
-                onClick={() => {
-                  editHandler(each);
-                }}
-              >
-                Edit
-              </Button>
-              <Button
-                color={"white"}
-                backgroundColor={"blue"}
-                className="rounded"
-                onClick={() => {
-                  setSelectedItem(each);
-                  onOpen();
-                }}
-              >
-                View Details
-              </Button>
+          <Draggable id="draggable" key={each}>
+            <div key={ind} className="bg-[#9DE8F2] flex flex-col gap-3 p-4">
+              <Text className="font-[600] text-left">{each?.title}</Text>
+              <Text className="font-400 text-left">
+                {each?.description || ""}
+              </Text>
+              <Text className="font-400 text-left">{`Created at: ${formatDate(
+                each?.date
+              )}`}</Text>
+              <div className="ml-auto flex flex-row w-[80%] gap-[4px] justify-end">
+                <Button
+                  color={"white"}
+                  backgroundColor={"red"}
+                  className="rounded"
+                  onClick={() => deleteHandler(each?._id)}
+                >
+                  Delete
+                </Button>
+                <Button
+                  color={"white"}
+                  backgroundColor={"blue"}
+                  className="rounded"
+                  onClick={() => {
+                    editHandler(each);
+                  }}
+                >
+                  Edit
+                </Button>
+                <Button
+                  color={"white"}
+                  backgroundColor={"blue"}
+                  className="rounded"
+                  onClick={() => {
+                    setSelectedItem(each);
+                    onOpen();
+                  }}
+                >
+                  View Details
+                </Button>
+              </div>
             </div>
-          </div>
+          </Draggable>
         ))}
       </div>
       {/* Task Details */}
