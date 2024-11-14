@@ -10,6 +10,7 @@ export default function TaskList() {
     const { over } = event;
     setParent(over ? over.id : null);
   }
+  console.log(parent);
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <Droppable id={"drop"}>
