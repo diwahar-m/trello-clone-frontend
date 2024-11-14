@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import InputField from "../elements/inputField.jsx";
+import InputField from "../elements/InputField.jsx";
 import { Button, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { getToken, postUser, setToken } from "../common/common.js";
