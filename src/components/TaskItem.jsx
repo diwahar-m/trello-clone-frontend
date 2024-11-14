@@ -3,7 +3,7 @@ import { deleteTask, formatDate, updateTask } from "../common/common";
 import { useContext, useState } from "react";
 import { TaskContext } from "../app/TaskPage.jsx";
 import AppModal from "../elements/AppModal.jsx";
-import InputField from "../elements/inputField";
+import InputField from "../elements/InputField";
 import { useForm } from "react-hook-form";
 import { Draggable } from "../drag/Draggable.jsx";
 

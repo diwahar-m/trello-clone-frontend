@@ -2,7 +2,7 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 import TaskList from "../components/TaskList.jsx";
 import AppModal from "../elements/AppModal.jsx";
 import { useForm } from "react-hook-form";
-import InputField from "../elements/inputField.jsx";
+import InputField from "../elements/InputField.jsx";
 import { addTask, getTasks } from "../common/common";
 import toast, { Toaster } from "react-hot-toast";
 import { createContext, useEffect, useState } from "react";
